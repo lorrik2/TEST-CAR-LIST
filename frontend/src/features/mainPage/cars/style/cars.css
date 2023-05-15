@@ -1,0 +1,20 @@
+div .row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+div .card-header {
+  display: flex;
+  justify-content: space-between;
+}
+.car-container {
+  margin: 0 auto;
+  width: 540px;
+}
+
+.text-head {
+}
+
+.cars-item {
+  text-transform: uppercase;
+}

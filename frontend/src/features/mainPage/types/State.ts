@@ -1,6 +1,6 @@
 import { Car } from './Car';
 
 export type State = {
-  carData: Car[];
+  carsData: Car[];
   error: string | undefined;
 };

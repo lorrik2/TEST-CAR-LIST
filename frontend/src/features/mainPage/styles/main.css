@@ -1,0 +1,34 @@
+.main-box {
+  margin: 0 auto;
+  width: 100rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.left-box {
+  width: 550px;
+  height: 800px;
+  background: #fff;
+  overflow: auto;
+}
+
+.btn-block {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: start;
+  margin-left: 1rem;
+  background: #fff;
+}
+
+.btn-block > p {
+  font-size: 23px;
+  margin: 0;
+}
+
+.btn-top {
+  color: black;
+}

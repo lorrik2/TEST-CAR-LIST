@@ -3,7 +3,7 @@ import { State } from './types/State';
 import * as api from '../../App/api';
 
 const initialState: State = {
-  carData: [],
+  carsData: [],
   error: undefined,
 };
 
@@ -16,7 +16,7 @@ const carsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getCarData.fulfilled, (state, action) => {
-        state.carData = action.payload;
+        state.carsData = action.payload;
       })
       .addCase(getCarData.rejected, (state, action) => {
         state.error = action.error.message;

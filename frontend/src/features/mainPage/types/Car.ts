@@ -9,4 +9,14 @@ export type Car = {
   longitude: number;
 };
 
+export type CarsData = {
+  id: number;
+  name: string;
+  model: string;
+  year: number;
+  color: string;
+  price: number;
+  latitude: number;
+  longitude: number;
+};
 export type CarId = Car['id'];
