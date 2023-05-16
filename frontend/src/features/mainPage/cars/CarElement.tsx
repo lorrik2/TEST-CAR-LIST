@@ -24,7 +24,7 @@ function CarElement({ cars }: { cars: CarsData }): JSX.Element {
         <p className="card-text cars-item ">
           Color:
           <span style={{ color: `${cars.color}` }}>
-            <strong>{cars.color}</strong>
+            <strong id="color-text"> {cars.color}</strong>
           </span>
         </p>
       </div>
