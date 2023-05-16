@@ -38,15 +38,10 @@ type Add = {
 };
 
 function Map(): JSX.Element {
-  const [data, setData] = useState<Car[]>([]);
-  const [res, setRes] = useState<{ lat: number; lng: number }[]>();
-  const dispatch = useAppDispatch();
+  const [activeMarker, setActiveMarker] = useState(null);
+
   const mapRef = useRef(undefined);
   const { carsData } = useSelector((store: RootState) => store.carState);
-
-  useEffect(() => {
-    setData(carsData);
-  }, [carsData]);
 
   const onLoad = React.useCallback(function callback(map: any) {
     mapRef.current = map;
@@ -60,9 +55,12 @@ function Map(): JSX.Element {
     googleMapsApiKey: String(API_KEY),
   });
 
-  //s
-
-  console.log(carsData[0].latitude, 'wtf');
+  const handleActiveMarker = (marker: any): any => {
+    if (marker === activeMarker) {
+      return;
+    }
+    setActiveMarker(marker);
+  };
 
   return isLoaded ? (
     <div className="mt-3">
@@ -75,8 +73,24 @@ function Map(): JSX.Element {
         options={defaultOptions}>
         {carsData?.map((place, inx) => (
           <Marker
-            key={place.id + inx}
-            position={{ lat: Number(place.latitude), lng: Number(place.longitude) }}></Marker>
+            key={place.id}
+            position={{ lat: Number(place.latitude), lng: Number(place.longitude) }}
+            onClick={() => handleActiveMarker(place.id)}>
+            {activeMarker === place.id ? (
+              <InfoWindow onCloseClick={() => setActiveMarker(null)}>
+                <div>
+                  <h1>
+                    <b>
+                      {place.name} {place.model}
+                    </b>
+                  </h1>
+                  <p>color: {place.color}</p>
+                  <p>year: {place.year}</p>
+                  <p>price: {place.price} </p>
+                </div>
+              </InfoWindow>
+            ) : null}
+          </Marker>
         ))}
       </GoogleMap>
     </div>
