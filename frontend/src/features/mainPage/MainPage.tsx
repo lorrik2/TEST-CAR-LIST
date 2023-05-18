@@ -66,7 +66,7 @@ function MainPage(): JSX.Element {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h4 className="card-title">Location Map</h4>
             <Map />
           </div>
         </div>
