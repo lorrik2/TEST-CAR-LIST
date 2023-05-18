@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { RootState, useAppDispatch } from '../../store';
 import { useSelector } from 'react-redux';
 import { Car, CarsData } from '../mainPage/types/Car';
+import carIcon from './assets/cars.svg';
 
 const containerStyle = {
   width: '1042px',
@@ -75,7 +76,8 @@ function Map(): JSX.Element {
           <Marker
             key={place.id}
             position={{ lat: Number(place.latitude), lng: Number(place.longitude) }}
-            onClick={() => handleActiveMarker(place.id)}>
+            onClick={() => handleActiveMarker(place.id)}
+            icon={carIcon}>
             {activeMarker === place.id ? (
               <InfoWindow onCloseClick={() => setActiveMarker(null)}>
                 <div>
@@ -99,4 +101,4 @@ function Map(): JSX.Element {
   );
 }
 
-export default Map;
+export default React.memo(Map);

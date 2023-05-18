@@ -12,7 +12,11 @@ export const getCarData = createAsyncThunk('carList/getCarData', () => api.getCa
 const carsSlice = createSlice({
   name: 'carList',
   initialState,
-  reducers: {},
+  reducers: {
+    sortCarsData: (state, action) => {
+      state.carsData = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getCarData.fulfilled, (state, action) => {
@@ -23,5 +27,7 @@ const carsSlice = createSlice({
       });
   },
 });
+
+export const { sortCarsData } = carsSlice.actions;
 
 export default carsSlice.reducer;
