@@ -34,8 +34,8 @@ function FormEdit({
   };
 
   return (
-    <form onSubmit={onHandleSubmit}>
-      <div className="input-group">
+    <form onSubmit={onHandleSubmit} className="bg-secondary-subtle">
+      <div className="input-group mt-1">
         <span className="input-group-text">Car brand and model</span>
         <input
           type="text"
@@ -54,7 +54,7 @@ function FormEdit({
           onChange={(e) => setModel(e.target.value)}
         />
       </div>
-      <div className="input-group">
+      <div className="input-group mt-1">
         <span className="input-group-text">Price and year</span>
         <input
           type="text"
@@ -73,7 +73,7 @@ function FormEdit({
           onChange={(e) => setYear(Number(e.target.value))}
         />
       </div>
-      <select className="form-select" onChange={(e) => setValue(e.target.value)}>
+      <select className="form-select mt-1" onChange={(e) => setValue(e.target.value)}>
         <option selected disabled>
           Car colors
         </option>
@@ -85,7 +85,7 @@ function FormEdit({
         <option value="grey">grey</option>
         <option value="yellow">yellow</option>
       </select>
-      <button type="submit" className="btn btn-light">
+      <button type="submit" className="btn btn-light mt-1">
         Edit
       </button>
     </form>

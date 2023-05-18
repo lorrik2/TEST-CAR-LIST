@@ -4,6 +4,7 @@ import { RootState, useAppDispatch } from '../../store';
 import { useSelector } from 'react-redux';
 import { Car, CarsData } from '../mainPage/types/Car';
 import carIcon from './assets/cars.svg';
+import defaultTheme from './theme/Theme';
 
 const containerStyle = {
   width: '1042px',
@@ -27,6 +28,7 @@ const defaultOptions = {
   scrollwheel: true,
   disableDoubleClickZoom: false,
   fullscreenControl: false,
+  styles: defaultTheme,
 };
 
 const API_KEY = process.env.REACT_APP_API_KEY;
