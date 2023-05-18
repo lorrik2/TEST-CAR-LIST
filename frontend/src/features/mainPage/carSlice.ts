@@ -16,6 +16,17 @@ const carsSlice = createSlice({
     sortCarsData: (state, action) => {
       state.carsData = action.payload;
     },
+    removeCar: (state, action) => {
+      if (Number.isNaN(+action.payload)) {
+        state.error = `${action.payload}`;
+      }
+      state.carsData = state.carsData.filter((car) => car.id !== +action.payload);
+    },
+    updateCar: (state, action) => {
+      state.carsData = state.carsData.map((car) =>
+        car.id === action.payload.id ? action.payload : car
+      );
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -28,6 +39,6 @@ const carsSlice = createSlice({
   },
 });
 
-export const { sortCarsData } = carsSlice.actions;
+export const { sortCarsData, removeCar, updateCar } = carsSlice.actions;
 
 export default carsSlice.reducer;
