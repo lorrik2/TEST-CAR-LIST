@@ -18,6 +18,10 @@
 - [HTML CSS]
 
 ## Использование
+
+<a href="https://gifyu.com/image/Snamw"><img src="https://s12.gifyu.com/images/ZAPIS-EKRANA-2023-05-18-V-3.08.47-PM-online-video-cutter.com.gif" alt="ZAPIS-EKRANA-2023-05-18-V-3.08.47-PM-online-video-cutter.com.gif" border="0" /></a>
+
+
 Что бы запустить проект локально, после клонирования проекта, откройте терминал:
 Зайдите в папку frontend
 ```sh
